@@ -11,7 +11,7 @@
 
         @keyframes a1 {
             from {
-                transform: rotate(120deg) scale(0.1);
+                transform: rotate(120deg) scale(0);
                 opacity: 0;
             }
 
@@ -40,9 +40,7 @@
             justify-content: center;
             align-items: center;
             border: 2px solid black;
-            border-radius: 15px;
             background: white;
-            width: 30%;
             padding: 1% 1% 1% 1%;
         }
 
@@ -62,20 +60,15 @@
             text-align: center;
         }
 
-        .t2 {
-            padding-left: 10%;
-            padding-right: 10%;
-            text-align: center;
-        }
-
-        .t3 {
-            display: block;
-        }
-
         .abox {
             text-align: left;
             margin: 0;
             width: fit-content;
+        }
+
+        a {
+            color: #2D72D9;
+            text-decoration: underline;
         }
     </style>
 </head>
@@ -86,21 +79,29 @@
     <div id="box3">
         <div id="box2">
             <div id="box1">
-                <h1 class="t1">phield的无名巢穴。(大概)</h1>
+                <h1 class="t1">phield的某处巢穴。</h1>
                 <div class="t1" style="border-top: 2px solid lightgrey; width: 100%;"></div>
                 <div class="abox">
-                    <p>·通往内部的小径: (施工中)</p>
-                    <p>·上次更新于: ?</p>
+                    <p>·通向内部的小径: <i><a id="tgt"></a></i></p>
+                    <p>·上次更新于: <span id="lst"></span></p>
                 </div>
-                <p class="t2">
+                <p class="t1">
                     (链接挂了非常抱歉！リンクが切れてしまったら申し訳ございません！)
                 </p>
                 <p class="t1">
-                    e-mail:phield990@outlook.com
+                    e-mail: phield990@outlook.com
                 </p>
             </div>
         </div>
     </div>
+    <script src="./url.js"></script>
+    <script>
+        let tgt = document.getElementById('tgt');
+        let lst = document.getElementById('lst');
+        tgt.innerHTML = url;
+        tgt.href = url;
+        lst.innerHTML = lastTime;
+    </script>
 </body>
 
 </html>
